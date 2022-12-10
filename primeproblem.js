@@ -2,18 +2,17 @@
 
 
 function checkPrime(num){
-  let flag = false;
-
-  if(num === 1){
-    return false;
-  }
-
-  for (let i = 0 ; i<= num; i++){
-    if(num % i !== 0){
-      flag = true;
+  counter=0;
+  for (let i=1;i<=num;i++){
+    if(num%i==0){
+      counter++;
     }
   }
-  return flag;
+  if(counter==2){
+    return true;
+  }
+  return false;
 }
 
-console.log(checkPrime(4));
+let ans=checkPrime(4);
+  (ans==true)?console.log("Prime"):console.log("Not Prime");
