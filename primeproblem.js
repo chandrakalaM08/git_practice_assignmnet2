@@ -2,17 +2,24 @@
 
 
 function checkPrime(num){
-  counter=0;
-  for (let i=1;i<=num;i++){
-    if(num%i==0){
-      counter++;
+
+  let isPrime = true;
+
+  if(number === 1){
+    console.log("1 is neither Prime nor composite.")
+  }
+  else if(number <= 0){
+    console.log(number,": Not a prime.");
+  }
+  else if(number > 2){
+    for (let i = 2 ; i< number; i++){
+      if(number % i === 0){
+      isPrime = false;
+      break;
+      }
     }
+    console.log(number,"is a prime : ",isPrime);
   }
-  if(counter==2){
-    return true;
-  }
-  return false;
 }
 
-let ans=checkPrime(4);
-  (ans==true)?console.log("Prime"):console.log("Not Prime");
+checkPrime(4);
